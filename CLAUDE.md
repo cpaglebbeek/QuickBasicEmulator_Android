@@ -37,3 +37,12 @@ Web-build wordt **niet** runtime opgehaald (offline-by-default):
 | WebView bundle | `app/src/main/assets/web-build/` (v0.6.0+) |
 | Build-config | `app/build.gradle.kts` |
 | Releases | `releases/` (per stable APK) |
+
+## CI-status
+
+`.github/_workflows_pending/ci.yml` ligt klaar maar is nog niet actief op GitHub. Reden: bij eerste push had `gh` OAuth-token de `workflow` scope niet. Activeren met:
+```bash
+gh auth refresh -s workflow
+mv .github/_workflows_pending .github/workflows
+git add -A && git commit -m "Activate CI workflow" && git push
+```
